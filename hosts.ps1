@@ -1,7 +1,7 @@
 ﻿$path = "C:\Windows\System32\drivers\etc\";
 $myhostpath = ($path + "my-hosts\");
 
-function switch-host {
+function Switch-Host {
 	param ([string]$env)
 	
 	$e = $env.ToLowerInvariant();		
@@ -10,18 +10,24 @@ function switch-host {
 
 	Write-Output ('Success switching to ' + $env + '.')
 
-}; Set-Alias sh switch-host
+}; Set-Alias sh Switch-Host
 
-function create {
+function Create-Host {
 	param ([string]$env)
 
 	New-Item ($myhostpath + $env.ToLowerInvariant()) -ItemType File > $null
 
 	Write-Output ('Success creating ' + $env + ' host.')
-}
+}; Set-Alias ch Create-Host
 
-function open {
+function Open-Host {
 	param ([string]$env)
 
 	Start-Process notepad++ ($myhostpath + $env.ToLowerInvariant())
-}
+}; Set-Alias oph Open-Host
+
+
+function Open-Current-Host {
+
+	Start-Process notepad++ ($path + 'hosts')
+}; Set-Alias opch Open-Current-Host

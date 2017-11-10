@@ -11,11 +11,14 @@ Simply tool to manage a windows hosts file. It will be very useful if you should
 
 ```powershell
 # switch to hosts file.
-switch-host 'dev'
+Switch-Host 'dev'
 
 # create a new empty host file in special my-hosts folder.
-create 'dev'
+Create-Host 'dev'
 
 # open an existing hosts file.
-open 'qa'
+Open-Host 'qa'
+
+# open a current used hosts file.
+Open-Current-Host
 ```
