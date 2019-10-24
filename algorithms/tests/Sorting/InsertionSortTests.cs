@@ -9,7 +9,7 @@ namespace Algorithms.Tests.Sorting
     {
         [Theory]
         [ClassData(typeof(SortingTestData))]
-        public void InsertionSortTest(int[] array)
+        public void SortTest(int[] array)
         {
             // Arrange
             // Act

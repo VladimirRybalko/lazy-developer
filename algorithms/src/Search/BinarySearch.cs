@@ -1,10 +1,24 @@
 namespace Algorithms.Search
 {
-    public sealed class BinarySearch
+    public static class BinarySearch
     {
-        public int Search(int[] array, int toFind)
+        public static int Search(int[] array, int toFind)
         {
-            return default;
+            var min = 0;
+            var max = array.Length - 1; 
+            while (min <=max)  
+            {  
+                var mid = (min + max) / 2;  
+                if (array[mid] == toFind)  
+                    return mid;
+                
+                if (toFind < array[mid]) 
+                    max = mid - 1;
+                else
+                    min = mid + 1;
+            }  
+            
+            return -1; 
         }
     }
 }

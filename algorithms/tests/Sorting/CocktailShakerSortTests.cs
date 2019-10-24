@@ -9,7 +9,7 @@ namespace Algorithms.Tests.Sorting
     {
         [Theory]
         [ClassData(typeof(SortingTestData))]
-        public void CocktailShakerSortTest(int[] array)
+        public void SortTest(int[] array)
         {
             // Arrange
             // Act
