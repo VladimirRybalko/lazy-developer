@@ -6,7 +6,7 @@ namespace Algorithms.Sorting
     {
         public static void Sort(int[] array)
         {
-            
+            // TODO: will be soon
         }
     }
 }
