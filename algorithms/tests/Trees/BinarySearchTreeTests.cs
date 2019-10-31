@@ -32,7 +32,7 @@ namespace Algorithms.Tests.Trees
 
             // Assert
             Assert.NotNull(result);
-            Assert.Equal(toFind, result.Value);
+            Assert.Equal(toFind, result?.Value);
         }
 
         [Fact]
@@ -63,7 +63,7 @@ namespace Algorithms.Tests.Trees
             // Assert
             var inserted = tree.Search(toInsert);
             Assert.NotNull(inserted);
-            Assert.Equal(toInsert, inserted.Value);
+            Assert.Equal(toInsert, inserted?.Value);
         }
 
         [Fact]
