@@ -11,7 +11,7 @@ namespace Algorithms.Trees
             Root = Insert(Root, value);
         }
 
-        private static Node? Insert(Node? node, int value)
+        protected virtual Node Insert(Node? node, int value)
         {
             if (node == null)
                 return new Node(value);
@@ -29,7 +29,7 @@ namespace Algorithms.Trees
             Root = Remove(Root, new Node(value));
         }
 
-        private static Node? Remove(Node? node, Node deleteNode) 
+        protected virtual Node? Remove(Node? node, Node deleteNode) 
         {
             if (node == null)
                 return null;
@@ -40,17 +40,10 @@ namespace Algorithms.Trees
                 node.Right = Remove(node.Right, deleteNode);
             else
             {
-                if (node.Left == null && node.Left == null)
-                    return null;
-
                 if (node.Left == null)
-                {
                     node = node.Right;
-                }
                 else if (node.Right == null)
-                {
                     node = node.Left;
-                }
                 else
                 {
                     var minLeft = node.Right;
@@ -58,7 +51,7 @@ namespace Algorithms.Trees
                         minLeft = minLeft.Left;
                     
                     node.Value = minLeft.Value;
-                    node.Right =  Remove(node.Right, minLeft);
+                    node.Right = Remove(node.Right, minLeft);
                 }
             }
             return node;
